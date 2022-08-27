@@ -1,0 +1,34 @@
+.confirm {
+    width: 150px;
+    height: 40px;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.65);
+    box-shadow: 3px 3px 10px 1px rgba(0,0,0,.4);
+    padding: 8px;
+    position: absolute;
+    display: flex;
+    flex-flow: row nowrap;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.confirm__title {
+    font-family: sans;
+    font-size: 16px;
+    line-height: 20px;
+    color: black;
+}
+
+.confirm__button {
+    width: 30px;
+    height: 30px;
+}
+
+/* .confirm__button_yes {
+
+}
+
+.confirm__button_no {
+
+} */

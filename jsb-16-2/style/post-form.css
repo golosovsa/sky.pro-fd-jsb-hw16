@@ -1,0 +1,67 @@
+.post-form__form {
+    width: 300px;
+    height: 300px;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.65);
+    box-shadow: 3px 3px 10px 1px rgba(0,0,0,.4);
+    padding: 8px;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-content: space-between;
+    align-items: stretch;
+    justify-content: space-between;
+}
+
+.post-form__label {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: flex-start;
+    justify-content: space-between;
+    align-items: center;
+    font-family: sans;
+    font-size: 16px;
+    line-height: 24px;
+    gap: 8px;
+}
+
+.post-form__input {
+    min-width: 230px;
+    max-width: 230px;
+    box-sizing: border-box;
+    resize: none;
+    outline: none;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 8px;
+    margin: 4px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease-in-out;
+    font-family: sans;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.post-form__input:active,
+.post-form__input:focus {
+    outline: none;
+    outline: none;
+    background-color: white;
+}
+
+.post-form__input_textarea {
+    height: 150px;
+}
+
+.post-form__input_button {
+    align-self: center;
+}
+
+.post-form__input_button:hover {
+    background-color: white;
+}
+
+.post-form__input_error::placeholder {
+    color: brown;
+}

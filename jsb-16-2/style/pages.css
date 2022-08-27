@@ -1,0 +1,77 @@
+.page {
+    box-sizing: border-box;
+    min-height: 100%;
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 32px;
+    align-content: flex-start;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+
+.page__header {
+    background-color: rgba(0, 0, 0, 0.6);
+    min-height: 128px;
+    display: flex;
+    flex-flow: row wrap;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.page__title {
+    color: white;
+    font-family: sans;
+    font-size: 64px;
+    padding: 16px;
+    font-weight: 400;
+    line-height: 80px;
+}
+
+.page__nav {
+    width: 300px;
+    display: flex;
+    flex-flow: row wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.page__nav-link {
+    box-sizing: border-box;
+    margin: 8px;
+    padding: 4px;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.3);
+    text-decoration: none;
+    color: #fff;
+    transition: all 0.3s ease-out;
+    outline: none;
+    border: none;
+}
+
+.page__nav-link:active,
+.page__nav-link:focus {
+    outline: none;
+}
+
+.page__nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #000;
+}
+
+.page__nav-link:disabled {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #ccc;
+}
+
+.page__footer {
+    background-color: rgba(255, 255, 255, 0.2);
+    min-height: 400px;
+    display: flex;
+    flex-flow: row wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
