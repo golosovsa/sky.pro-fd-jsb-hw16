@@ -6,6 +6,8 @@
 class DAO {
     constructor(handle) {
         this.handle = handle;
+        this.data = undefined;
+        this.maxID = undefined;
     }
 
     async create(data) {
@@ -25,6 +27,11 @@ class DAO {
                     text: response.statusText,
                 };
             }
+
+            this.maxID++;
+            data.id = this.maxID;
+            console.log(data);
+            this.data.push(data);
 
             return {
                 status: "ok",
@@ -76,7 +83,9 @@ class DAO {
     async update(data) {
         try {
 
-            const response = await fetch(this.handle + `/${data.id}`, {
+            const id = data.id > 100 ? 1 : data.id;
+
+            const response = await fetch(this.handle + `/${id}`, {
                 method: "PUT",
                 headers: {
                     'Content-type': 'application/json; charset=UTF-8',
@@ -90,6 +99,15 @@ class DAO {
                     code: response.status,
                     text: response.statusText,
                 };
+            }
+
+            console.log(data);
+
+            for (let index = 0; index < this.data.length; index++) {
+                if (this.data[index].id === data.id) {
+                    this.data[index].title = data.title;
+                    this.data[index].body = data.body;
+                }
             }
 
             return {
@@ -121,6 +139,9 @@ class DAO {
                 };
             }
 
+            const post = document.dao.data.find((item) => item.id === data.id);
+            this.data.splice(this.data.indexOf(post), 1);
+
             return {
                 status: "ok",
                 code: response.status,
@@ -134,5 +155,12 @@ class DAO {
                 text: error.message || error,
             };
         }
+    }
+
+    async init() {
+        const result = await this.read(); 
+        this.data = result.data;
+        this.maxID = Math.max(...this.data.map(item => item.id));
+        return result;
     }
 }

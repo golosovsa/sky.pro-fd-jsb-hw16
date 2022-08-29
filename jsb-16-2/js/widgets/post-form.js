@@ -68,5 +68,12 @@ class PostForm {
         this.title.disabled = false;
         this.body.disabled = false;
         this.submit.disabled = false;
+        this.data = new PostModel("", "");
+    }
+
+    show(post) {
+        this.data = post;
+        this.title.value = post.title;
+        this.body.value = post.body;
     }
 }
